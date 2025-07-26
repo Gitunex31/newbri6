@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="title">RechargeStatut.com</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+  body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  font-weight: 600;
+}
+
+header {
+  background-color: #222;
+  color: white;
+  padding: 20px;
+}
+
+header .container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+}
+
+.custom-language-selector {
+  position: relative;
+  margin-top: 10px;
+}
+
+.selected-lang {
+  background-color: darkslategrey;
+  border: 1px solid #ccc;
+  padding: 8px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lang-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: darkslategrey;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  display: none;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.lang-options li {
+  list-style: none;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.lang-options li:hover {
+  background-color: lightslategrey;
+}
+
+.hero-section {
+  background-color:lightblue;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+}
+
+.btn-primary {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  display: inline-block;
+  margin-top: 20px;
+  border-radius: 4px;
+}
+
+.gallery {
+  padding: 60px 20px;
+}
+
+.gallery .container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.gallery h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.faq {
+  padding: 60px 20px;
+  background-color: #f8f9fa;
+}
+
+.faq .container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.faq h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.accordion-item {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.accordion-button {
+  width: 100%;
+  text-align: left;
+  padding: 15px 20px;
+  background-color: #e9ecef;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.accordion-button.collapsed {
+  background-color: #f1f1f1;
+}
+
+.accordion-body {
+  display: none;
+  padding: 15px 20px;
+  font-size: 1em;
+  color: #333;
+}
+
+.accordion-body.show {
+  display: block;
+}
+
+footer {
+  background-color: #222;
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+footer a {
+  margin: 0 10px;
+  color: white;
+}
+
+/* ======================= */
+/* RESPONSIVE STYLES */
+/* ======================= */
+
+/* Medium devices (tablets ≤768px) */
+@media (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .selected-lang, .lang-options {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero-section {
+    padding: 80px 10px;
+  }
+
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .btn-primary {
+    padding: 8px 16px;
+  }
+
+  .gallery {
+    padding: 40px 10px;
+  }
+
+  .faq {
+    padding: 40px 10px;
+  }
+
+  footer {
+    padding: 20px 10px;
+  }
+}
+
+/* Small devices (phones ≤480px) */
+@media (max-width: 480px) {
+  .hero-section h1 {
+    font-size: 1.7rem;
+  }
+
+  nav a {
+    margin: 5px 0;
+  }
+
+  .accordion-button {
+    font-size: 0.95rem;
+    padding: 12px 16px;
+  }
+
+  .accordion-body {
+    font-size: 0.95rem;
+    padding: 12px 16px;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <a href="#" data-i18n="nav_home">Accueil</a>
+    </nav>
+    <div class="custom-language-selector">
+      <div class="selected-lang" onclick="toggleLangMenu()">
+        <img src="https://flagcdn.com/w20/gb.png" alt="EN">
+        <span data-i18n="lang_en">English</span>
+      </div>
+      <ul class="lang-options">
+        <li onclick="setLang('en')"><img src="https://flagcdn.com/w20/gb.png" alt=""> English</li>
+        <li onclick="setLang('fr')"><img src="https://flagcdn.com/w20/fr.png" alt=""> Français</li>
+        <li onclick="setLang('es')"><img src="https://flagcdn.com/w20/es.png" alt=""> Español</li>
+        <li onclick="setLang('de')"><img src="https://flagcdn.com/w20/de.png" alt=""> Deutsch</li>
+        <li onclick="setLang('it')"><img src="https://flagcdn.com/w20/it.png" alt=""> Italiano</li>
+        <li onclick="setLang('pt')"><img src="https://flagcdn.com/w20/pt.png" alt=""> Português</li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero-section">
+    <h1 data-i18n="hero_title">Bienvenue sur RechargeStatut.com</h1>
+    <p data-i18n="hero_subtitle">Vérifiez rapidement l’authenticité de vos tickets, cartes ou codes d’achat.</p>
+    <a href="#galerie" class="btn-primary" data-i18n="btn_explore">Découvrir nos offres</a>
+  </section>
+
+  <section id="galerie" class="gallery">
+    <div class="container">
+      <h2 data-i18n="gallery_title"></h2>
+      <div class="gallery-grid">
+        <a href="form.html"><img src="img/transcash.png" alt="Transcash" data-i18n="[alt]transcash"></a>
+        <a href="form.html"><img src="img/pcs.png" alt="PCS" data-i18n="[alt]pcs"></a>
+        <a href="form.html"><img src="img/neosurf.jpg" alt="Neosurf" data-i18n="[alt]neosurf"></a>
+        <a href="form.html"><img src="img/steam.jpg" alt="Steam" data-i18n="[alt]steam"></a>
+        <a href="form.html"><img src="img/google_play.jpg" alt="Google Play" data-i18n="[alt]google_play"></a>
+        <a href="form.html"><img src="img/PaySafeCard.jpg" alt="Paysafe Card" data-i18n="[alt]paysafecard"></a>
+        <a href="form.html"><img src="img/Amazon.jpg" alt="Amazon" data-i18n="[alt]amazon"></a>
+        <a href="form.html"><img src="img/Playstation_store.jpg" alt="Playstation Store" data-i18n="[alt]playstation_store"></a>
+        <a href="form.html"><img src="img/carte-itunes.jpg" alt="iTunes" data-i18n="[alt]itunes"></a>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <section id="faq" class="faq">
+    <div class="container">
+      <h2 data-i18n="faq_title">FAQ</h2>
+
+      <div class="accordion-item">
+        <button class="accordion-button" onclick="toggleFAQ(this)" data-i18n="faq1_q">Qu'est-ce qu’un ticket de recharge ou un ticket prépayé ?</button>
+        <div class="accordion-body" data-i18n="faq1_a">C’est un code prépayé utilisé comme moyen de paiement. Il fonctionne sans compte bancaire. Pratique pour les achats en ligne sécurisés.</div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-button" onclick="toggleFAQ(this)" data-i18n="faq2_q">Est-ce que ce service est gratuit ?</button>
+        <div class="accordion-body" data-i18n="faq2_a">Oui, la vérification est totalement gratuite.</div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-button" onclick="toggleFAQ(this)" data-i18n="faq3_q">Quels types de cartes puis-je vérifier ?</button>
+        <div class="accordion-body" data-i18n="faq3_a">Vous pouvez vérifier des cartes Transcash, PCS, Neosurf, Steam, Google Play, Amazon et bien d'autres.</div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-button" onclick="toggleFAQ(this)" data-i18n="faq4_q">Comment recevoir un email de confirmation ?</button>
+        <div class="accordion-body" data-i18n="faq4_a">Indiquez une adresse email valide lors de la vérification. Vous recevrez automatiquement un message. Il vous informe du statut de votre ticket.</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <a href="#galerie" data-i18n="footer_gallery">Galerie</a>
+  <a href="#faq" data-i18n="footer_faq">FAQ</a>
+  <a href="#contact" data-i18n="footer_contact">Contact</a>
+  <h3 data-i18n="footer_copyright">&copy; 2025 RechargeStatut.com Tous droits réservés.</h3>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  function toggleFAQ(button) {
+    const body = button.nextElementSibling;
+    const isOpen = body.classList.contains('show');
+
+    // Fermer toutes les réponses
+    document.querySelectorAll('.accordion-body').forEach(b => b.classList.remove('show'));
+    document.querySelectorAll('.accordion-button').forEach(btn => btn.classList.remove('collapsed'));
+
+    // Si ce n'était pas déjà ouvert, on l’ouvre
+    if (!isOpen) {
+      body.classList.add('show');
+      button.classList.add('collapsed');
+    }
+  }
+</script>
+
+
+</body>
+</html>
+
