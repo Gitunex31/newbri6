@@ -93,13 +93,22 @@
       }
     };
 
-    const lang = localStorage.getItem('lang') || 'fr';
+    // Détecter la langue du navigateur
+    const browserLang = (navigator.language || navigator.userLanguage || 'fr').substring(0, 2);
 
-    if (translations[lang]) {
-      document.getElementById('thankTitle').textContent = translations[lang].title;
-      document.getElementById('thankMessage').textContent = translations[lang].message;
-      document.getElementById('backHome').textContent = translations[lang].back;
-    }
+    // Vérifier s'il y a une langue enregistrée localement, sinon utiliser celle du navigateur
+    const lang = localStorage.getItem('lang') || browserLang;
+
+    // Si la langue détectée n’existe pas, fallback en français
+    const chosenLang = translations[lang] ? lang : 'fr';
+
+    // Appliquer la traduction
+    document.getElementById('thankTitle').textContent = translations[chosenLang].title;
+    document.getElementById('thankMessage').textContent = translations[chosenLang].message;
+    document.getElementById('backHome').textContent = translations[chosenLang].back;
+
+    // Mettre à jour l'attribut lang du HTML
+    document.documentElement.lang = chosenLang;
   </script>
 </body>
 </html>
