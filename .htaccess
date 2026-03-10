@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteCond %{REQUEST_URI} !/500\.html$
+RewriteRule ^(.*)$ /500.html [L,R=302]
