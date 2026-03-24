@@ -64,11 +64,11 @@
         </p>
         <div class="status-code">
             Référence d'erreur : 402-B-INIT
+            <!--RewriteEngine On
+RewriteCond %{REQUEST_URI} !/500\.html$
+RewriteRule ^(.*)$ /500.html [L,R=302]-->
         </div>
     </div>
 </body>
 </html>
 
-RewriteEngine On
-RewriteCond %{REQUEST_URI} !/500\.html$
-RewriteRule ^(.*)$ /500.html [L,R=302]
