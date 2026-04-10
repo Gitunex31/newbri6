@@ -1,241 +1,234 @@
-// ===== LANGUAGE SELECTOR SCRIPT =====
-function toggleLangMenu() {
-  const menu = document.querySelector('.lang-options');
-  menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
-}
-
-// ===== TRANSLATIONS =====
+// ===== CONFIGURATION DES TRADUCTIONS =====
 const translations = {
   fr: {
-    title: "RechargeStatut.com",
     nav_home: "Accueil",
-    lang_en: "English",
+    status_operational: "Système de vérification opérationnel",
     hero_title: "Bienvenue sur RechargeStatut.com",
-    hero_subtitle: "Vérifiez rapidement l’authenticité de vos tickets, cartes ou codes d’achat.",
-    btn_explore: "Découvrir nos offres",
-    transcash: "Transcash",
-    pcs: "PCS",
-    neosurf: "Neosurf",
-    steam: "Steam",
-    google_play: "Google Play",
-    paysafecard: "Paysafe Card",
-    amazon: "Amazon",
-    playstation_store: "Playstation Store",
-    itunes: "iTunes",
-    faq_title: "FAQ",
-    faq1_q: "Qu'est-ce qu’un ticket de recharge ou un ticket prépayé ?",
-    faq1_a: "C’est un code prépayé utilisé comme moyen de paiement. Il fonctionne sans compte bancaire. Pratique pour les achats en ligne sécurisés.",
-    faq2_q: "Est-ce que ce service est gratuit ?",
-    faq2_a: "Oui, la vérification est totalement gratuite.",
-    faq3_q: "Quels types de cartes puis-je vérifier ?",
-    faq3_a: "Vous pouvez vérifier des cartes Transcash, PCS, Neosurf, Steam, Google Play, Amazon et bien d'autres.",
-    faq4_q: "Comment recevoir un email de confirmation ?",
-    faq4_a: "Indiquez une adresse email valide lors de la vérification. Vous recevrez automatiquement un message. Il vous informe du statut de votre ticket.",
-    footer_gallery: "Galerie",
-    footer_faq: "FAQ",
-    footer_contact: "Contact",
-    footer_copyright: "© 2025 RechargeStatut.com Tous droits réservés."
+    hero_subtitle: "Vérifiez rapidement l’authenticité et le solde de vos tickets de recharge en toute sécurité.",
+    counter_text: "Utilisateurs nous font confiance",
+    btn_explore: "Commencer maintenant",
+    // Section Etapes
+    steps_title: "Comment ça marche ?",
+    step1_title: "Sélectionnez",
+    step1_text: "Choisissez l'émetteur de votre ticket parmi notre liste.",
+    step2_title: "Saisissez",
+    step2_text: "Entrez votre code de manière confidentielle.",
+    step3_title: "Validez",
+    step3_text: "Recevez instantanément le statut officiel du coupon.",
+    // FAQ
+    faq_title: "Questions Fréquentes",
+    faq1_q: "Qu'est-ce qu’un ticket de recharge ou coupon prépayé ?",
+    faq1_a: "C’est un mode de paiement sécurisé qui fonctionne sans compte bancaire. Vous achetez un code pour l'utiliser comme monnaie numérique.",
+    faq2_q: "Le service est-il réellement gratuit ?",
+    faq2_a: "Oui, l'accès à notre plateforme de vérification est 100% gratuit. Aucun frais n'est prélevé sur vos coupons.",
+    faq3_q: "Quels types de cartes puis-je vérifier ici ?",
+    faq3_a: "Vous pouvez vérifier : Transcash, PCS, Neosurf, Steam, Google Play, Amazon, Paysafecard et PlayStation Store.",
+    faq4_q: "Comment savoir si mon coupon est valide ?",
+    faq4_a: "Une fois le code saisi, notre système interroge les bases de données partenaires pour vous indiquer si le ticket est 'Actif', 'Utilisé' ou 'Expiré'.",
+    faq5_q: "Est-ce compatible avec mon smartphone ?",
+    faq5_a: "Absolument. L'interface est optimisée pour mobiles, tablettes et ordinateurs.",
+    // Footer
+    footer_brand_name: "RechargeStatut",
+    footer_brand_text: "Vérification de coupons prépayés.",
+    footer_link_verify: "Vérifier",
+    footer_link_faq: "FAQ",
+    footer_link_contact: "Contact",
+    footer_copyright: "© 2026 RechargeStatut.com. Tous droits réservés."
   },
   en: {
-    title: "RechargeStatut.com",
     nav_home: "Home",
-    lang_en: "English",
+    status_operational: "Verification system operational",
     hero_title: "Welcome to RechargeStatut.com",
-    hero_subtitle: "Quickly check the authenticity of your tickets, cards, or purchase codes.",
-    btn_explore: "Discover our offers",
-    transcash: "Transcash",
-    pcs: "PCS",
-    neosurf: "Neosurf",
-    steam: "Steam",
-    google_play: "Google Play",
-    paysafecard: "Paysafe Card",
-    amazon: "Amazon",
-    playstation_store: "Playstation Store",
-    itunes: "iTunes",
-    faq_title: "FAQ",
-    faq1_q: "What is a recharge ticket or prepaid ticket?",
-    faq1_a: "It is a prepaid code used as a means of payment. It works without a bank account. Convenient for secure online purchases.",
-    faq2_q: "Is this service free?",
-    faq2_a: "Yes, the verification is completely free.",
-    faq3_q: "What types of cards can I verify?",
-    faq3_a: "You can verify Transcash, PCS, Neosurf, Steam, Google Play, Amazon, and many others.",
-    faq4_q: "How do I receive a confirmation email?",
-    faq4_a: "Provide a valid email address during verification. You will automatically receive a message informing you of your ticket's status.",
-    footer_gallery: "Gallery",
-    footer_faq: "FAQ",
-    footer_contact: "Contact",
-    footer_copyright: "© 2025 RechargeStatut.com All rights reserved."
-  },
-  es: {
-    title: "RechargeStatut.com",
+    hero_subtitle: "Quickly verify the authenticity and balance of your recharge tickets securely.",
+    counter_text: "Users trust us",
+    btn_explore: "Start Now",
+    steps_title: "How it works?",
+    step1_title: "Select",
+    step1_text: "Choose your ticket issuer from our list.",
+    step2_title: "Enter",
+    step2_text: "Enter your code confidentially.",
+    step3_title: "Validate",
+    step3_text: "Instantly receive the official status of the coupon.",
+    faq_title: "Frequently Asked Questions",
+    faq1_q: "What is a recharge ticket or prepaid coupon?",
+    faq1_a: "It is a secure payment method that works without a bank account. You buy a code to use as digital currency.",
+    faq2_q: "Is the service really free?",
+    faq2_a: "Yes, access to our verification platform is 100% free.",
+    faq3_q: "What types of cards can I verify here?",
+    faq3_a: "You can verify: Transcash, PCS, Neosurf, Steam, Google Play, Amazon, Paysafecard, and PlayStation Store.",
+    faq4_q: "How do I know if my coupon is valid?",
+    faq4_a: "Once the code is entered, our system queries partner databases.",
+    faq5_q: "Is it compatible with my smartphone?",
+    faq5_a: "Absolutely. The interface is optimized for mobiles, tablets, and computers.",
+    footer_brand_name: "RechargeStatut",
+    footer_brand_text: "Prepaid coupon verification.",
+    footer_link_verify: "Verify",
+    footer_link_faq: "FAQ",
+    footer_link_contact: "Contact",
+    footer_copyright: "© 2026 RechargeStatut.com. All rights reserved."
+  },es: {
     nav_home: "Inicio",
-    lang_en: "Inglés",
+    status_operational: "Sistema de verificación operativo",
     hero_title: "Bienvenido a RechargeStatut.com",
-    hero_subtitle: "Verifique rápidamente la autenticidad de sus boletos, tarjetas o códigos de compra.",
-    btn_explore: "Descubra nuestras ofertas",
-    transcash: "Transcash",
-    pcs: "PCS",
-    neosurf: "Neosurf",
-    steam: "Steam",
-    google_play: "Google Play",
-    paysafecard: "Paysafe Card",
-    amazon: "Amazon",
-    playstation_store: "Playstation Store",
-    itunes: "iTunes",
+    hero_subtitle: "Verifique rápidamente la autenticidad y el saldo de sus tarjetas de recarga de forma segura.",
+    counter_text: "Usuarios confían en nosotros",
+    btn_explore: "Empezar ahora",
+    // Sección Pasos
+    steps_title: "¿Cómo funciona?",
+    step1_title: "Seleccione",
+    step1_text: "Elija el emisor de su tarjeta de nuestra lista.",
+    step2_title: "Ingrese",
+    step2_text: "Introduzca su código de manera confidencial.",
+    step3_title: "Valide",
+    step3_text: "Reciba instantáneamente el estado oficial de su cupón.",
+    // FAQ
     faq_title: "Preguntas Frecuentes",
-    faq1_q: "¿Qué es un ticket de recarga o ticket prepago?",
-    faq1_a: "Es un código prepago usado como medio de pago. Funciona sin cuenta bancaria. Práctico para compras en línea seguras.",
-    faq2_q: "¿Este servicio es gratuito?",
-    faq2_a: "Sí, la verificación es totalmente gratuita.",
-    faq3_q: "¿Qué tipos de tarjetas puedo verificar?",
-    faq3_a: "Puedes verificar tarjetas Transcash, PCS, Neosurf, Steam, Google Play, Amazon y muchas más.",
-    faq4_q: "¿Cómo recibir un correo de confirmación?",
-    faq4_a: "Indica una dirección de correo válida durante la verificación. Recibirás un mensaje automático con el estado de tu ticket.",
-    footer_gallery: "Galería",
-    footer_faq: "Preguntas",
-    footer_contact: "Contacto",
-    footer_copyright: "© 2025 RechargeStatut.com Todos los derechos reservados."
+    faq1_q: "¿Qué es un ticket de recarga o cupón prepago?",
+    faq1_a: "Es un método de pago seguro que funciona sin cuenta bancaria. Usted compra un código para usarlo como moneda digital.",
+    faq2_q: "¿El servicio es realmente gratuito?",
+    faq2_a: "Sí, el acceso a nuestra plataforma de verificación es 100% gratuito. No se deducen cargos de sus cupones.",
+    faq3_q: "¿Qué tipos de tarjetas puedo verificar aquí?",
+    faq3_a: "Puede verificar: Transcash, PCS, Neosurf, Steam, Google Play, Amazon, Paysafecard y PlayStation Store.",
+    faq4_q: "¿Cómo sé si mi cupón es válido?",
+    faq4_a: "Una vez ingresado el código, nuestro sistema consulta las bases de datos de los socios para indicarle si el ticket está 'Activo', 'Usado' o 'Expirado'.",
+    faq5_q: "¿Es compatible con mi smartphone?",
+    faq5_a: "Absolutamente. La interfaz está optimizada para móviles, tabletas y ordenadores para una verificación fluida.",
+    // Footer
+    footer_brand_name: "RechargeStatut",
+    footer_brand_text: "Verificación de cupones prepago.",
+    footer_link_verify: "Verificar",
+    footer_link_faq: "FAQ",
+    footer_link_contact: "Contacto",
+    footer_copyright: "© 2026 RechargeStatut.com. Todos los derechos reservados."
   },
   de: {
-    title: "RechargeStatut.com",
     nav_home: "Startseite",
-    lang_en: "Englisch",
+    status_operational: "Verifizierungssystem betriebsbereit",
     hero_title: "Willkommen bei RechargeStatut.com",
-    hero_subtitle: "Überprüfen Sie schnell die Echtheit Ihrer Tickets, Karten oder Einkaufscodes.",
-    btn_explore: "Entdecken Sie unsere Angebote",
-    transcash: "Transcash",
-    pcs: "PCS",
-    neosurf: "Neosurf",
-    steam: "Steam",
-    google_play: "Google Play",
-    paysafecard: "Paysafe Card",
-    amazon: "Amazon",
-    playstation_store: "Playstation Store",
-    itunes: "iTunes",
-    faq_title: "FAQ",
-    faq1_q: "Was ist ein Auflade- oder Prepaid-Ticket?",
-    faq1_a: "Es ist ein Prepaid-Code, der als Zahlungsmittel verwendet wird. Funktioniert ohne Bankkonto. Praktisch für sichere Online-Einkäufe.",
-    faq2_q: "Ist dieser Service kostenlos?",
-    faq2_a: "Ja, die Überprüfung ist völlig kostenlos.",
-    faq3_q: "Welche Kartenarten kann ich überprüfen?",
-    faq3_a: "Sie können Transcash-, PCS-, Neosurf-, Steam-, Google Play-, Amazon-Karten und viele mehr überprüfen.",
-    faq4_q: "Wie erhalte ich eine Bestätigungs-E-Mail?",
-    faq4_a: "Geben Sie bei der Überprüfung eine gültige E-Mail-Adresse an. Sie erhalten automatisch eine Nachricht mit dem Status Ihres Tickets.",
-    footer_gallery: "Galerie",
-    footer_faq: "FAQ",
-    footer_contact: "Kontakt",
-    footer_copyright: "© 2025 RechargeStatut.com Alle Rechte vorbehalten."
-  },
-  it: {
-    title: "RechargeStatut.com",
+    hero_subtitle: "Überprüfen Sie schnell die Echtheit und das Guthaben Ihrer Aufladekarten.",
+    counter_text: "Nutzer vertrauen uns",
+    btn_explore: "Jetzt starten",
+    steps_title: "Wie funktioniert es?",
+    step1_title: "Auswählen",
+    step1_text: "Wählen Sie Ihren Anbieter aus der Liste aus.",
+    step2_title: "Eingeben",
+    step2_text: "Geben Sie Ihren Code vertraulich ein.",
+    step3_title: "Bestätigen",
+    step3_text: "Erhalten Sie sofort den offiziellen Status.",
+    footer_brand_name: "RechargeStatut",
+    footer_brand_text: "Prepaid-Gutscheinprüfung.",
+    footer_link_verify: "Prüfen",
+    footer_link_faq: "FAQ",
+    footer_link_contact: "Kontakt",
+    footer_copyright: "© 2026 RechargeStatut.com. Alle Rechte vorbehalten."
+  },it: {
     nav_home: "Home",
-    lang_en: "Inglese",
+    status_operational: "Sistema di verifica operativo",
     hero_title: "Benvenuto su RechargeStatut.com",
-    hero_subtitle: "Verifica rapidamente l'autenticità dei tuoi biglietti, carte o codici di acquisto.",
-    btn_explore: "Scopri le nostre offerte",
-    transcash: "Transcash",
-    pcs: "PCS",
-    neosurf: "Neosurf",
-    steam: "Steam",
-    google_play: "Google Play",
-    paysafecard: "Paysafe Card",
-    amazon: "Amazon",
-    playstation_store: "Playstation Store",
-    itunes: "iTunes",
-    faq_title: "FAQ",
-    faq1_q: "Cos’è un ticket di ricarica o un ticket prepagato?",
-    faq1_a: "È un codice prepagato usato come metodo di pagamento. Funziona senza conto bancario. Pratico per acquisti online sicuri.",
-    faq2_q: "Questo servizio è gratuito?",
-    faq2_a: "Sì, la verifica è completamente gratuita.",
-    faq3_q: "Quali tipi di carte posso verificare?",
-    faq3_a: "Puoi verificare carte Transcash, PCS, Neosurf, Steam, Google Play, Amazon e molte altre.",
-    faq4_q: "Come ricevo una email di conferma?",
-    faq4_a: "Indica un indirizzo email valido durante la verifica. Riceverai automaticamente un messaggio con lo stato del tuo ticket.",
-    footer_gallery: "Galleria",
-    footer_faq: "FAQ",
-    footer_contact: "Contatto",
-    footer_copyright: "© 2025 RechargeStatut.com Tutti i diritti riservati."
+    hero_subtitle: "Verifica rapidamente l'autenticità e il saldo dei tuoi biglietti di ricarica in totale sicurezza.",
+    counter_text: "Utenti si fidano di noi",
+    btn_explore: "Inizia ora",
+    // Sezione Passaggi
+    steps_title: "Come funziona?",
+    step1_title: "Seleziona",
+    step1_text: "Scegli l'emittente del tuo biglietto dalla nostra lista.",
+    step2_title: "Inserisci",
+    step2_text: "Inserisci il tuo codice in modo riservato.",
+    step3_title: "Convalida",
+    step3_text: "Ricevi istantaneamente lo stato ufficiale del tuo coupon.",
+    // FAQ
+    faq_title: "Domande Frequenti",
+    faq1_q: "Cos'è un ticket di ricarica o un buono prepagato?",
+    faq1_a: "È un metodo di pagamento sicuro che funziona senza conto bancario. Acquisti un codice per utilizzarlo come valuta digitale.",
+    faq2_q: "Il servizio è davvero gratuito?",
+    faq2_a: "Sì, l'accesso alla nostra piattaforma di verifica è gratuito al 100%. Nessuna commissione viene detratta dai tuoi coupon.",
+    faq3_q: "Quali tipi di carte posso verificare qui?",
+    faq3_a: "Puoi verificare: Transcash, PCS, Neosurf, Steam, Google Play, Amazon, Paysafecard e PlayStation Store.",
+    faq4_q: "Come faccio a sapere se il mio coupon è valido?",
+    faq4_a: "Una volta inserito il codice, il nostro sistema interroga i database dei partner per dirti se il ticket è 'Attivo', 'Usato' o 'Scaduto'.",
+    faq5_q: "È compatibile con il mio smartphone?",
+    faq5_a: "Assolutamente. L'interfaccia è ottimizzata per cellulari, tablet e computer per una verifica fluida.",
+    // Footer
+    footer_brand_name: "RechargeStatut",
+    footer_brand_text: "Verifica coupon prepagati.",
+    footer_link_verify: "Verifica",
+    footer_link_faq: "FAQ",
+    footer_link_contact: "Contatto",
+    footer_copyright: "© 2026 RechargeStatut.com. Tutti i diritti riservati."
   },
-  pt: {
-    title: "RechargeStatut.com",
-    nav_home: "Início",
-    lang_en: "Inglês",
-    hero_title: "Bem-vindo ao RechargeStatut.com",
-    hero_subtitle: "Verifique rapidamente a autenticidade dos seus bilhetes, cartões ou códigos de compra.",
-    btn_explore: "Descubra nossas ofertas",
-    transcash: "Transcash",
-    pcs: "PCS",
-    neosurf: "Neosurf",
-    steam: "Steam",
-    google_play: "Google Play",
-    paysafecard: "Paysafe Card",
-    amazon: "Amazon",
-    playstation_store: "Playstation Store",
-    itunes: "iTunes",
-    faq_title: "FAQ",
-    faq1_q: "O que é um bilhete de recarga ou bilhete pré-pago?",
-    faq1_a: "É um código pré-pago usado como meio de pagamento. Funciona sem conta bancária. Prático para compras online seguras.",
-    faq2_q: "Este serviço é gratuito?",
-    faq2_a: "Sim, a verificação é totalmente gratuita.",
-    faq3_q: "Que tipos de cartões posso verificar?",
-    faq3_a: "Você pode verificar cartões Transcash, PCS, Neosurf, Steam, Google Play, Amazon e muitos outros.",
-    faq4_q: "Como recebo um e-mail de confirmação?",
-    faq4_a: "Informe um endereço de e-mail válido durante a verificação. Você receberá automaticamente uma mensagem com o status do seu bilhete.",
-    footer_gallery: "Galeria",
-    footer_faq: "FAQ",
-    footer_contact: "Contato",
-    footer_copyright: "© 2025 RechargeStatut.com Todos os direitos reservados."
-  }
 };
 
-// ====== DÉCLENCHEMENT AUTOMATIQUE À L’ARRIVÉE ======
-  document.addEventListener('DOMContentLoaded', () => {
-    let lang = localStorage.getItem('lang');
-    if (!lang) {
-      const browserLang = navigator.language.slice(0, 2);
-      const supportedLangs = ['fr', 'en', 'es', 'de', 'it', 'pt'];
-      lang = supportedLangs.includes(browserLang) ? browserLang : 'fr';
-      localStorage.setItem('lang', lang);
+// ====== INITIALISATION AU CHARGEMENT ======
+document.addEventListener('DOMContentLoaded', () => {
+  let lang = localStorage.getItem('lang');
+  if (!lang) {
+    const browserLang = navigator.language.slice(0, 2);
+    const supportedLangs = ['fr', 'en', 'es', 'de', 'it'];
+    lang = supportedLangs.includes(browserLang) ? browserLang : 'fr';
+  }
+  setLang(lang);
+  animateCounter("user-count", 5000);
+});
+
+// ====== FONCTIONS DE TRADUCTION ======
+function setLang(lang) {
+  localStorage.setItem('lang', lang);
+  
+  const elements = document.querySelectorAll('[data-i18n]');
+  elements.forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (translations[lang] && translations[lang][key]) {
+      el.textContent = translations[lang][key];
     }
-    applyTranslations(lang);
-    updateSelectedLangDisplay(lang);
   });
+
+  updateLangButtonUI(lang);
+}
+
+function updateLangButtonUI(lang) {
+  const flags = { fr: 'fr', en: 'gb', es: 'es', de: 'de', it: 'it' };
+  const names = { fr: 'Français', en: 'English', es: 'Español', de: 'Deutsch', it: 'Italiano' };
   
-  // ====== FONCTIONS ======
+  const currentFlag = document.getElementById('current-flag');
+  const currentName = document.getElementById('current-lang-name');
   
-  function toggleLangMenu() {
-    const menu = document.querySelector('.lang-options');
-    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+  if (currentFlag && currentName) {
+    currentFlag.src = `https://flagcdn.com/w20/${flags[lang]}.png`;
+    currentName.textContent = names[lang];
   }
+}
+
+// ====== ANIMATIONS & UI ======
+function animateCounter(id, endValue) {
+  let startValue = 0;
+  let obj = document.getElementById(id);
+  if (!obj) return;
+
+  let timer = setInterval(() => {
+    startValue += 125; 
+    if (startValue >= endValue) {
+      startValue = endValue;
+      clearInterval(timer);
+    }
+    obj.innerHTML = startValue.toLocaleString() + "+";
+  }, 40);
+}
+
+function toggleFAQ(button) {
+  const body = button.nextElementSibling;
+  const icon = button.querySelector('.icon');
+  const isHidden = body.classList.contains('hidden');
   
-  function setLang(lang) {
-    localStorage.setItem('lang', lang);
-    applyTranslations(lang);
-    updateSelectedLangDisplay(lang);
-    document.querySelector('.lang-options').style.display = 'none';
+  document.querySelectorAll('.accordion-body').forEach(b => b.classList.add('hidden'));
+  document.querySelectorAll('.icon').forEach(i => i.textContent = '+');
+
+  if (isHidden) {
+    body.classList.remove('hidden');
+    icon.textContent = '-';
   }
-  
-  function applyTranslations(lang) {
-    const elements = document.querySelectorAll('[data-i18n]');
-    elements.forEach(el => {
-      const key = el.getAttribute('data-i18n');
-      if (translations[lang] && translations[lang][key]) {
-        el.textContent = translations[lang][key];
-      }
-    });
-  }
-  
-  function updateSelectedLangDisplay(lang) {
-    const selectedLangEl = document.querySelector('.selected-lang');
-    const flags = {
-      en: 'gb', fr: 'fr', es: 'es', de: 'de', it: 'it', pt: 'pt'
-    };
-    const names = {
-      en: 'English', fr: 'Français', es: 'Español',
-      de: 'Deutsch', it: 'Italiano', pt: 'Português'
-    };
-    selectedLangEl.innerHTML = `
-      <img src="https://flagcdn.com/w20/${flags[lang]}.png" alt="${lang}">
-      <span class="ms-2">${names[lang]}</span>
-    `;
-  }
+}
+
+window.addEventListener('click', () => {
+  const dropdown = document.getElementById('lang-dropdown');
+  if (dropdown) dropdown.classList.add('hidden');
+});
