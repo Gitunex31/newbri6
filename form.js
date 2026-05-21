@@ -143,8 +143,8 @@ function setLang(lang) {
 }
 
 function updateLangButtonUI(lang) {
-  const flags = { fr: 'fr', en: 'gb', es: 'es', de: 'de', it: 'it' };
-  const names = { fr: 'Français', en: 'English', es: 'Español', de: 'Deutsch', it: 'Italiano' };
+  const flags = { fr: 'fr', en: 'gb', es: 'es', de: 'de', it: 'it', pt: 'pt' };
+const names = { fr: 'Français', en: 'English', es: 'Español', de: 'Deutsch', it: 'Italiano', pt: 'Português' };
   
   const currentFlag = document.getElementById('current-flag');
   const currentName = document.getElementById('current-lang-name');
