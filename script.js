@@ -35,6 +35,41 @@ const translations = {
     footer_link_contact: "Contact",
     footer_copyright: "© 2026 RechargeStatut.com. Tous droits réservés."
   },
+  pt: {
+    nav_home: "Início",
+    status_operational: "Sistema de verificação operacional",
+    hero_title: "Bem-vindo ao RechargeStatut.com",
+    hero_subtitle: "Verifique rapidamente a autenticidade e o saldo dos seus cartões de recarga com total segurança.",
+    counter_text: "Utilizadores confiam em nós",
+    btn_explore: "Começar agora",
+    // Section Etapes
+    steps_title: "Como funciona?",
+    step1_title: "Selecione",
+    step1_text: "Escolha o emissor do seu cartão a partir da nossa lista.",
+    step2_title: "Introduza",
+    step2_text: "Insira o seu código de forma confidencial.",
+    step3_title: "Valide",
+    step3_text: "Receba instantaneamente o estado oficial do cupão.",
+    // FAQ
+    faq_title: "Perguntas Frequentes",
+    faq1_q: "O que é um cartão de recarga ou cupão pré-pago?",
+    faq1_a: "É um método de pagamento seguro que funciona sem conta bancária. Compra um código para o utilizar como moeda digital.",
+    faq2_q: "O serviço é realmente gratuito?",
+    faq2_a: "Sim, o acesso à nossa plataforma de verificação é 100% gratuito. Não é cobrada qualquer taxa sobre os seus cupões.",
+    faq3_q: "Que tipos de cartões posso verificar aqui?",
+    faq3_a: "Pode verificar: Transcash, PCS, Neosurf, Steam, Google Play, Amazon, Paysafecard e PlayStation Store.",
+    faq4_q: "Como sei se o meu cupão é válido?",
+    faq4_a: "Após introduzir o código, o nosso sistema consulta as bases de dados parceiras para lhe indicar se o cartão está 'Ativo', 'Utilizado' ou 'Expirado'.",
+    faq5_q: "É compatível com o meu smartphone?",
+    faq5_a: "Absolutamente. A interface está otimizada para telemóveis, tablets e computadores.",
+    // Footer
+    footer_brand_name: "RechargeStatut",
+    footer_brand_text: "Verificação de cupões pré-pagos.",
+    footer_link_verify: "Verificar",
+    footer_link_faq: "FAQ",
+    footer_link_contact: "Contacto",
+    footer_copyright: "© 2026 RechargeStatut.com. Todos os direitos reservados."
+},
   en: {
     nav_home: "Home",
     status_operational: "Verification system operational",
