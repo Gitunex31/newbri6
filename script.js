@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let lang = localStorage.getItem('lang');
   if (!lang) {
     const browserLang = navigator.language.slice(0, 2);
-    const supportedLangs = ['fr', 'en', 'es', 'de', 'it'];
+    const supportedLangs = ['fr', 'en', 'es', 'de', 'it', 'pt'];
     lang = supportedLangs.includes(browserLang) ? browserLang : 'fr';
   }
   setLang(lang);
